@@ -1,0 +1,16 @@
+@import "tailwindcss";
+:root{
+ --ink:#111827;
+ --navy:#102a43;
+ --navy2:#173b5e;
+ --gold:#d6b36a;
+ --gold2:#b9944f;
+ --ivory:#f7f3ea;
+ --paper:#fffdf8;
+ --muted:#687384;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--ivory);color:var(--ink);font-family:Inter,Arial,Helvetica,sans-serif}
+button,a{transition:all .18s ease}
+::selection{background:var(--gold);color:#111827}

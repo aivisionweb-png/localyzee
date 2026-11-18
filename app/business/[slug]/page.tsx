@@ -1,0 +1,13 @@
+'use client';
+import {useParams} from "next/navigation";
+export default function Business(){
+ const {slug}=useParams<{slug:string}>();
+ const title=(slug||"shreeji-cafe").split("-").map(x=>x[0]?.toUpperCase()+x.slice(1)).join(" ");
+ return <main className="min-h-screen bg-[#f7f3ea] text-[var(--ink)]">
+  <nav className="mx-auto flex max-w-6xl items-center justify-between border-b border-black/10 px-6 py-6"><div className="text-xl font-black">{title}</div><div className="flex gap-2"><button className="rounded-full border border-black/10 bg-white px-4 py-2 text-sm font-bold">Reviews 4.8★</button><button className="rounded-full bg-[var(--navy)] px-5 py-2 text-sm font-bold text-white">Book Now</button></div></nav>
+  <section className="mx-auto max-w-6xl px-6 py-24 md:py-32"><p className="text-xs font-black uppercase tracking-[.25em] text-[var(--gold2)]">Welcome</p><h1 className="mt-6 max-w-5xl text-6xl font-black leading-[.91] tracking-[-.05em] md:text-8xl">Good business.<br/><span className="text-[var(--navy)]">Better experience.</span></h1><p className="mt-8 max-w-xl text-lg leading-8 text-black/50">A polished customer home with offers, WhatsApp, bookings, directions and social proof.</p><div className="mt-9 flex flex-wrap gap-3"><a href="https://wa.me/919876543210" className="rounded-full bg-[var(--navy)] px-7 py-4 font-black text-white">WhatsApp Us</a><button className="rounded-full border border-black/10 bg-white px-7 py-4 font-black">Get Directions</button></div></section>
+  <section className="mx-auto max-w-6xl px-6 pb-20"><div className="rounded-[2rem] bg-[var(--navy)] p-8 text-white md:p-12"><p className="text-xs font-black uppercase tracking-[.25em] text-[var(--gold)]">Today’s offer</p><div className="mt-4 flex flex-col justify-between gap-8 md:flex-row md:items-end"><div><h2 className="text-4xl font-black">Buy 2 Get 1 Free</h2><p className="mt-3 text-white/45">Selected items · Today only</p></div><button className="rounded-full bg-[var(--gold)] px-6 py-3 font-black text-[var(--ink)]">Claim offer</button></div></div></section>
+  <section className="mx-auto grid max-w-6xl gap-4 px-6 pb-24 md:grid-cols-3">{[["Signature Coffee","₹120"],["Cheese Nachos","₹180"],["Paneer Sandwich","₹160"]].map(([n,p])=><article key={n} className="rounded-3xl border border-black/10 bg-white p-5"><div className="h-48 rounded-2xl bg-[var(--navy)]/5"/><div className="mt-5 flex justify-between"><b>{n}</b><b>{p}</b></div></article>)}</section>
+  <footer className="border-t border-black/10 py-10 text-center text-sm text-black/35">Powered by LOCALYZE</footer>
+ </main>
+}
